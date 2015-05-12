@@ -1,0 +1,9 @@
+extends layout
+
+block content
+    h1 Hello Boulder!
+    form#translator
+        input(type='text', name='language-from', placeholder='Language of word to translate')
+        input(type='text', name='language-to', placeholder='Language to translate to')
+        input(type='text', name='word', placeholder='Word to translate')
+        input(type='submit', value='Submit')

@@ -1,9 +1,18 @@
 extends layout
 
 block content
-    h1 Hello Boulder!
+    h1 Welcome to the translator!
     form#translator
-        input(type='text', name='language-from', placeholder='Language of word to translate')
-        input(type='text', name='language-to', placeholder='Language to translate to')
-        input(type='text', name='word', placeholder='Word to translate')
+        div.dropdown
+                button.btn.btn-default.dropdown-toggle(type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true") From Language 
+                    span.caret
+                ul.dropdown-menu(role="menu" aria-labelledby="dropdownMenu1")
+                for language in languages
+                    li= language[0]
+
+        //- input(type='text', name='from', placeholder='Language of word to translate')
+        input(type='text', name='to', placeholder='Language to translate to')
+        input(type='text', name='text', placeholder='Word to translate')
         input(type='submit', value='Submit')
+    script.
+        var languages = !{JSON.stringify(languages)};
